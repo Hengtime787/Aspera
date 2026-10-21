@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Atlas"
+rootProject.name = "Aspera"
 include(":app")
 include(":nativelib")

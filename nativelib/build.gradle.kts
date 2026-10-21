@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.atlas.nativelib"
+    namespace = "com.aspera.nativelib"
     compileSdk {
         version = release(37)
     }

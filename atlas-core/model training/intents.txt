@@ -64,14 +64,15 @@ __label__MUTE silence the system audio
 __label__MUTE turn sound completely off
 __label__MUTE suppress all audio output
 __label__MUTE mute the device audio
+__label__MUTE mute
 __label__MUTE disable all sound playback
 
 __label__UNMUTE restore audio output
-__label__UNMUTE re enable sound output
 __label__UNMUTE bring system audio back
 __label__UNMUTE allow sound playback again
 __label__UNMUTE restore media audio
 __label__UNMUTE resume sound output
+__label__UNMUTE unmute
 __label__UNMUTE re enable audio playback
 __label__UNMUTE unmute system audio
 __label__UNMUTE stop muting sounds

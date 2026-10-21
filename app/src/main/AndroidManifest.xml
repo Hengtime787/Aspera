@@ -10,16 +10,16 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/atlas"
+        android:icon="@drawable/aspera"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/atlas"
+        android:roundIcon="@drawable/aspera"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Atlas" >
+        android:theme="@style/Theme.Aspera" >
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Atlas"
+            android:theme="@style/Theme.Aspera"
             android:windowSoftInputMode="adjustResize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +27,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".divide.Media_Notification_Listener"
+            android:label="Aspera Media Listener"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

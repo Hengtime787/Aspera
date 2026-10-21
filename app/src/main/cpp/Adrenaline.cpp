@@ -16,7 +16,7 @@ static std::unique_ptr<fasttext::FastText> g_fastText = nullptr;
 static std::mutex g_mutex;
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_atlas_space_Adrenaline_Ignite(
+Java_com_aspera_space_Adrenaline_Ignite(
         JNIEnv* env,
         jobject thiz,
         jstring modelPath_) {
@@ -48,7 +48,7 @@ Java_com_atlas_space_Adrenaline_Ignite(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_atlas_space_Adrenaline_Purge(
+Java_com_aspera_space_Adrenaline_Purge(
         JNIEnv* env,
         jobject thiz) {
     std::lock_guard<std::mutex> lock(g_mutex);
@@ -57,7 +57,7 @@ Java_com_atlas_space_Adrenaline_Purge(
 }
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_atlas_space_Adrenaline_Resolve(
+Java_com_aspera_space_Adrenaline_Resolve(
         JNIEnv* env,
         jobject thiz,
         jstring query_) {
