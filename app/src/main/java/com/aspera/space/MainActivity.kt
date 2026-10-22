@@ -1,5 +1,4 @@
 // Note: Fuck conventions. My thoughts are messy, so my code is messy but in a beautiful way. //
-//nts build onboeadrd later pls
 package com.aspera.space
 
 import android.os.Bundle
@@ -35,6 +34,10 @@ class MainActivity : FragmentActivity() {
 
         AppContext.get = applicationContext // fix later for service contesxt instead of mainactivity context.
         AppContext.currentActivity = this
+
+        // ONBOARDING CHECK //
+
+        ParkOnboarding.wasCompleted(this)
 
         Adrenaline.setup(this)
 
