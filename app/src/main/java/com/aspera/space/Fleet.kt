@@ -128,7 +128,7 @@ val Fleet = mapOf(
     "BLUETOOTH_ON" to Ships(
         Exec = {
 
-            println("Life life life is life is going on.")
+            AppContext.get.bluetoothCTL("enable")
 
         },
         authLevel = "LOW",
@@ -137,7 +137,7 @@ val Fleet = mapOf(
 
     "BLUETOOTH_OFF" to Ships(
         Exec = {
-
+            AppContext.get.bluetoothCTL("disable")
             println("Im just talking to myself.")
 
         },
@@ -147,7 +147,7 @@ val Fleet = mapOf(
 
     "WIFI_ON" to Ships(
         Exec = {
-
+            AppContext.get.nmCLI("enable")
             println("I got a long way to go.")
 
         },
@@ -157,7 +157,7 @@ val Fleet = mapOf(
 
     "WIFI_OFF" to Ships(
         Exec = {
-
+            AppContext.get.nmCLI("disable")
             println("If my armor breaks Ill fuse it back together.")
 
         },
@@ -167,7 +167,7 @@ val Fleet = mapOf(
 
     "MOBILE_DATA_ON" to Ships(
         Exec = {
-
+            AppContext.get.nmCLI("enable")
             println("You just to know you're being heard.")
 
         },
@@ -177,7 +177,7 @@ val Fleet = mapOf(
 
     "MOBILE_DATA_OFF" to Ships(
         Exec = {
-
+            AppContext.get.nmCLI("disable")
             println("If i could not break your fall, Ill pick you up right off the ground.")
 
         },
@@ -187,8 +187,8 @@ val Fleet = mapOf(
 
     "AIRPLANE_ON" to Ships(
         Exec = {
-
-            println("I wanna let go but theres comfort in the panic.")
+            AppContext.get.nmCLI("enable")
+            println("I wanna let go but there's comfort in the panic.")
 
         },
         authLevel = "HIGH",
@@ -197,8 +197,8 @@ val Fleet = mapOf(
 
     "AIRPLANE_OFF" to Ships(
         Exec = {
-
-            println("I wont let you feel that now.")
+            AppContext.get.nmCLI("disable")
+            println("I won't let you feel that now.")
 
         },
         authLevel = "HIGH",
@@ -207,7 +207,7 @@ val Fleet = mapOf(
 
     "DND_ON" to Ships(
         Exec = {
-
+            AppContext.get.shutupCTL("enable")
             println("I wanna let go but theres comfort in the panic.")
 
         },
@@ -218,6 +218,7 @@ val Fleet = mapOf(
     "DND_OFF" to Ships(
         Exec = {
 
+            AppContext.get.shutupCTL("disable")
             println("I wont let you feel that now.")
 
         },
@@ -231,7 +232,7 @@ val Fleet = mapOf(
 
     "ADAPTIVE_BRIGHTNESS_ON" to Ships(
         Exec = {
-
+            AppContext.get.brightnessCTL("enable")
             println("There will be a day that you will understand.")
 
         },
@@ -242,6 +243,7 @@ val Fleet = mapOf(
     "ADAPTIVE_BRIGHTNESS_OFF" to Ships(
         Exec = {
 
+            AppContext.get.brightnessCTL("disable")
             println("Oh Ill be sorry for now that i couldnt be around.")
 
         },
@@ -253,6 +255,7 @@ val Fleet = mapOf(
 
     "BATTERY_LEVEL_STATUS_GET" to Ships(
         Exec = {
+            Toast.makeText(AppContext.get, AppContext.get.batteryCTL("GET_LEVEL"), Toast.LENGTH_SHORT).show()
 
             println("I dont lose i dont win if im wrong then Im halfway right")
 
@@ -263,7 +266,7 @@ val Fleet = mapOf(
 
     "BATTERY_SAVER_ON" to Ships(
         Exec = {
-
+            AppContext.get.batteryCTL("SAVER_ON")
             println("Cannot help you not to hurt anymore.")
 
         },
@@ -274,6 +277,7 @@ val Fleet = mapOf(
     "BATTERY_SAVER_OFF" to Ships(
         Exec = {
 
+            AppContext.get.batteryCTL("SAVER_OFF")
             println("There are things that we can have but cant keep.")
 
         },
@@ -287,7 +291,7 @@ val Fleet = mapOf(
         Exec = {
 
             println("It can't be outdone")
-            Toast.makeText(AppContext.get, TimeNow(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(AppContext.get, AppContext.get.TimeNow(), Toast.LENGTH_SHORT).show()
 
         },
         authLevel = "HIGH",
@@ -299,7 +303,7 @@ val Fleet = mapOf(
         Exec = {
 
             println("God blesses everyone")
-            Toast.makeText(AppContext.get, DateNow(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(AppContext.get, AppContext.get.DateNow(), Toast.LENGTH_SHORT).show()
         },
         authLevel = "NONE",
         responseType = "Personality",
@@ -321,6 +325,7 @@ val Fleet = mapOf(
 
     "FLASHLIGHT_ON" to Ships(
         Exec = {
+            AppContext.get.flashlightCTL("enable")
             println("hyprocriiiiiiiiiiiiiiiiiiiiiiiiiiiites")
         },
         authLevel="NONE",
@@ -329,6 +334,7 @@ val Fleet = mapOf(
 
     "FLASHLIGHT_OFF" to Ships(
         Exec = {
+            AppContext.get.flashlightCTL("disable")
             println("hyprocriiiiiiiiiiiiiiiiiiiiiiiiiiiites")
         },
         authLevel="NONE",

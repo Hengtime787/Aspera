@@ -83,6 +83,8 @@ class MainActivity : FragmentActivity() {
                         // calling it inline ish kinda equivalent now
                     }
 
+
+
                     /*
                     Greeting(
                         name = "Matthew",

@@ -126,6 +126,30 @@ __label__AIRPLANE_OFF disable airplane protocol
 __label__AIRPLANE_OFF switch off flight mode
 __label__AIRPLANE_OFF stop flight mode
 
+__label__DND_ON turn on do not disturb
+__label__DND_ON enable do not disturb mode
+__label__DND_ON turn do not disturb on
+__label__DND_ON activate do not disturb
+__label__DND_ON switch on do not disturb
+__label__DND_ON start do not disturb
+__label__DND_ON put phone in do not disturb mode
+
+__label__DND_OFF turn off do not disturb
+__label__DND_OFF disable do not disturb mode
+__label__DND_OFF turn do not disturb off
+__label__DND_OFF deactivate do not disturb
+__label__DND_OFF switch off do not disturb
+__label__DND_OFF stop do not disturb
+__label__DND_OFF take phone out of do not disturb mode
+
+__label__ADAPTIVE_BRIGHTNESS_ON turn on adaptive brightness
+__label__ADAPTIVE_BRIGHTNESS_ON enable auto brightness
+__label__ADAPTIVE_BRIGHTNESS_ON turn adaptive brightness on
+
+__label__ADAPTIVE_BRIGHTNESS_OFF turn off adaptive brightness
+__label__ADAPTIVE_BRIGHTNESS_OFF disable auto brightness
+__label__ADAPTIVE_BRIGHTNESS_OFF turn adaptive brightness off
+
 __label__TIME_CURRENT give me the current time
 __label__TIME_CURRENT tell me the current local time
 __label__TIME_CURRENT provide the time right now
@@ -155,6 +179,24 @@ __label__BATTERY_SAVER_OFF deactivate battery conservation mode
 __label__BATTERY_SAVER_OFF restore normal power usage
 __label__BATTERY_SAVER_OFF switch off battery saver mode
 __label__BATTERY_SAVER_OFF exit low power mode
+
+__label__FLASHLIGHT_ON turn on the flashlight
+__label__FLASHLIGHT_ON shine the torch please
+__label__FLASHLIGHT_ON turn the flashlight on
+__label__FLASHLIGHT_ON enable the torch
+__label__FLASHLIGHT_ON switch on the flashlight
+__label__FLASHLIGHT_ON light up the room
+__label__FLASHLIGHT_ON turn on torch mode
+__label__FLASHLIGHT_ON activate flashlight
+
+__label__FLASHLIGHT_OFF turn off the flashlight
+__label__FLASHLIGHT_OFF turn the flashlight off
+__label__FLASHLIGHT_OFF disable the torch
+__label__FLASHLIGHT_OFF switch off the flashlight
+__label__FLASHLIGHT_OFF turn off torch mode
+__label__FLASHLIGHT_OFF deactivate flashlight
+__label__FLASHLIGHT_OFF turn the light off
+__label__FLASHLIGHT_OFF kill the torch
 
 __label__SHUTDOWN power down the device safely
 __label__SHUTDOWN power off the system
@@ -191,3 +233,4 @@ __label__NONE random discussion topic
 __label__NONE this statement requires no action
 __label__NONE do sandwiches have freckles
 __label__NONE did you know that i like eating food
+__label__NONE how are biscuits consuming space

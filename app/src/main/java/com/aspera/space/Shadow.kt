@@ -14,14 +14,25 @@ import android.content.Intent
 import android.provider.Settings
 import android.widget.Toast
 //Bluetooth
+
 import android.bluetooth.BluetoothManager
 import android.bluetooth.BluetoothAdapter
+
+// Permissions (mostly for bluetooth)
+
+import android.Manifest
+import androidx.core.content.ContextCompat
+import android.app.Activity
+import android.app.NotificationManager
+import android.hardware.camera2.CameraAccessException
+import android.os.BatteryManager
+
 //biometrics
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
 import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import androidx.biometric.BiometricPrompt
-import androidx.core.content.ContextCompat
+import androidx.core.app.ActivityCompat.requestPermissions
 import androidx.fragment.app.FragmentActivity
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
@@ -30,7 +41,10 @@ import kotlin.coroutines.resume
 import java.time.LocalTime
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+//flashlight
 
+import android.hardware.camera2.CameraManager
+import android.hardware.camera2.CameraCharacteristics
 
 //region SECURITY
 // ai fucked it up so this is all me.
@@ -53,6 +67,7 @@ suspend fun AuthPrompt(activity: FragmentActivity): Boolean = suspendCancellable
             super.onAuthenticationError(errorCode, errorString)
             Zhou = false // just in case again
             Toast.makeText(activity, "Verification Failed. Engaging Lockdown protocols."/*I SHOULD PROBABLY FOLOLOW THROUHG ON THAT!*/, Toast.LENGTH_SHORT).show() // ya lets tell em about that AGAIN
+    //THIS MAY BE DUE TO NO PASSWORD?
             // vim keys is so nice
             if (continuation.isActive) continuation.resume(false)
         }
@@ -61,11 +76,21 @@ suspend fun AuthPrompt(activity: FragmentActivity): Boolean = suspendCancellable
 
     // HOW IT LOOKS
 
-    val promptInfo = BiometricPrompt.PromptInfo.Builder()
-    //now make it Aspera style...
+    //need support for android 9 + 10 without lag on newer devices.
+    val promptBuilder = BiometricPrompt.PromptInfo.Builder()
+        //now make it Aspera style...
         .setTitle("Aspera Authentication")
-        .setAllowedAuthenticators(BIOMETRIC_STRONG or DEVICE_CREDENTIAL) // finger or face or pin.
-        .build() // idk wtf that does.
+
+    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.R) {
+        promptBuilder.setAllowedAuthenticators(BIOMETRIC_STRONG or DEVICE_CREDENTIAL)
+    } else if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+        @Suppress("DEPRECATION")
+        promptBuilder.setDeviceCredentialAllowed(true)
+    } else {
+        promptBuilder.setNegativeButtonText("Cancel")
+    }
+
+    val promptInfo = promptBuilder.build()
 
     val biometricPrompt = BiometricPrompt(activity, executor, listener)
     biometricPrompt.authenticate(promptInfo)
@@ -146,11 +171,11 @@ inline fun Context.AudioUnmute() {
 val prettynow = DateTimeFormatter.ofPattern("HH:mm")
 val prettydate = DateTimeFormatter.ofPattern("EEEE, MMMM d")
 
-fun TimeNow(): String {
+fun Context.TimeNow(): String {
     return LocalTime.now().format(prettynow)
 }
 
-fun DateNow(): String {
+fun Context.DateNow(): String {
     return LocalDate.now().format(prettydate)
 }
 
@@ -158,34 +183,254 @@ fun DateNow(): String {
 
 //region BLUETOOTH
 //pretty pround here as welll.
-/*
-fun Context.bluetoothCTL(argument: String) {
-    // could be optional
 
-    val blueMan = getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
-    val btadapter = blueMan.adapter ?: return
+inline fun Context.bluetoothCTL(argument: String) {
+    // could be optional
+    try {
+        // for nowwill just go to bluetooth setting there.
+//    val blueMan = getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
 // end optional
         if (argument == "enable") {
             startActivity(
-                Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+                Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE).apply {
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }
+
+
+            )/*
+        catch (e: SecurityException) {
+            println("MINOR: 5 bluetooth - bluetoot hpermission not given")
+        }*/
+            println("Aspera - start -- bluetooth popup activity")
+        } else if (argument == "disable") {
+            startActivity(Intent(Settings.ACTION_BLUETOOTH_SETTINGS).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            )
+        } else {
+            println("BLUETOOTH -- MINOR 4: bluetooth action not found/completed.")
+        }
+
+    } catch(e: SecurityException) {
+        println("MEDIA -- MINOR 3: Bluetooth Devices Permission Required")
+
+        println("BLUETOOTH -- AppContext type: ${AppContext.currentActivity::class.java.name}")
+        val ghosts = AppContext.currentActivity as? Activity
+        if (ghosts !=null) {
+
+
+            requestPermissions(// may have to make this not framgentatciritvty if other mainactivity type isn't fragmentactivity
+                ghosts,
+                arrayOf(Manifest.permission.BLUETOOTH_CONNECT),
+                1
+            )
+
+            //time to actually execute now assuming that worked lol hopefully no infinite loop
+            println("executing AFTER permission request")
+            startActivity(Intent(Settings.ACTION_BLUETOOTH_SETTINGS).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
             )
         }
+    }
+}
 
-        else if (argument == "disable") {
-        btadapter.disable()
+/*
+    catch (e: SecurityException) {
+        println("MEDIA -- MINOR 1: Notification Listener Permission Required")
+        val OpenSettings = Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+        startActivity(OpenSettings)
+        "Notification Access Settings Opening."
+
     }
 
-        else {
-            println("BLUETOOTH -- MINOR 3: ")
-        }
+    catch (e: Exception) {
+        "MEDIA -- MINOR 2: Unable to read current track"
+    }
 }*/
 
 //endregion BLUETOOTH
 
+//region NETWORK
+
+inline fun Context.nmCLI(argument: String) {
+    try {
+        if (argument == "enable" || argument == "disable") {
+            startActivity(Intent(Settings.Panel.ACTION_INTERNET_CONNECTIVITY).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            )
+            }
+    } catch (e: SecurityException) {
+        println("FLAT 1 - ANDROID ADK OLDER THAN ANDROID 10. FALLING BACK TO OLD WIFI CONTROL PANEL.")
+
+        startActivity(Intent(Settings.ACTION_WIFI_SETTINGS).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        })
+
+    } catch (e: Exception) {
+        println("WIFI -- MINOR 6: Wifi Settings Unavailable: ${e.message}")
+    }
+    }
+//endregion NETWORK
+
+//region DND
+
+inline fun Context.shutupCTL(argument: String/*, timevalue: Int = 0*/) {
+    //notification manager for dnd
+
+    try {
+
+        val notificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        // check if notify policy access permission is allowed
+            println(notificationManager.isNotificationPolicyAccessGranted)
+        if (!notificationManager.isNotificationPolicyAccessGranted) {
+            throw SecurityException("FLAT 2 - NOTIFICATION POLICY ACCESS REQUIRED")
+        }
+
+            if (argument == "enable") {
+                // do the thing
+                notificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_PRIORITY)
+                println("I can't breath without you")
+            }
+
+
+        else if (argument == "disable") {
+                // undo the thing
+            notificationManager.setInterruptionFilter(NotificationManager.INTERRUPTION_FILTER_ALL)
+            print("You are not alone")
+        }
+
+        else {
+            println("Notification manager failed somehow,")
+        }
+/*
+        else if (argument == "timed-enable" && timevalue > 0) {
+
+        }
+*/
+    } catch (e: SecurityException) {
+        startActivity(Intent(Settings.ACTION_NOTIFICATION_POLICY_ACCESS_SETTINGS).apply {
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        })
+    }
+
+}
+
+//endregion DND
+
+//region BRIGHTNESS
+//the idea here is an arg and so it's either a percent, for the brightness level, (maybe ill have a string parester later?
+// and the it could also be a string like "ADAPT" or "UNADAPT", which will toggle adaptive brightness.
+
+inline fun Context.brightnessCTL(argument: String) {
+    try {
+
+        if (!Settings.System.canWrite(this)) {
+            throw SecurityException("FLAT 3 -- SYSTEM SETTINGS WRITE PERMISSION REQUIRED")
+        }
+
+        if (argument == "enable") {
+            Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC
+        }
+
+        else if (argument == "disable") {
+            Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL
+        }
+        else {
+            println("System brightness not changed due to error in system settings write.")
+        }
+// could a an int or just add to arg a number for arg parsing brightness control. will not implement yet because arg parsing is not implemented yet.
+    } catch (e: SecurityException) {
+        println("FLAT 3 -- DISPLAYING PERMISSION POPUP FOR BRIGHTNESS/SYSTEM SETTINGS CONTROL.")
+        //do the permission thing
+         // need this for com.aspera. etc.....
+
+        startActivity(Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS).apply {
+            data = android.net.Uri.parse("package:$packageName")
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        })
+
+    }
+}
+
+//endregion BRIGHTNESS
+
+//region BATTERY
+
+inline fun Context.batteryCTL(argument: String): String {
+
+    val batman = getSystemService(Context.BATTERY_SERVICE) as BatteryManager
+    val level = batman.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+
+     if (argument == "GET_LEVEL") {
+        return if (batman.isCharging) {
+            "Battery level at $level% and charging"
+        }
+         else {
+             "Battery level at $level%"
+        }
+    }
+
+    else if (argument == "SAVER_ON" || argument == "SAVER_OFF") {
+
+        try {
+            startActivity(Intent(Settings.ACTION_BATTERY_SAVER_SETTINGS).apply {
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
+            })
+                return ""
 
 
 
+        } catch (e: Exception) {
+            println("BATTERY -- MINOR: UNEXPECTED ERROR AFTER startActivity in battery saver settings.")
+        }
 
+     } else {
+         println("MAJOR-- UNSPECIFIED BATTERY COMMAND. THROWING ERROR NOW.")
+         throw Exception("Unspecified battery command.")
+         return ""
+     }
+    return ""
+}
+
+//endregion BATTERY
+
+//region LIGHT
+
+inline fun Context.flashlightCTL(argument: String) {
+    try {
+        val camMan = getSystemService(Context.CAMERA_SERVICE) as CameraManager
+
+        val cameraID = camMan.cameraIdList.firstOrNull { id ->
+            camMan.getCameraCharacteristics(id)
+                .get(android.hardware.camera2.CameraCharacteristics.FLASH_INFO_AVAILABLE) == true
+
+        } ?: camMan.cameraIdList.firstOrNull()
+
+        if (cameraID != null) {
+            if (argument == "enable") {
+                camMan.setTorchMode(cameraID, true)
+                println("Aspera -- Light ON")
+            } else if (argument == "disable") {
+                camMan.setTorchMode(cameraID, false)
+                println("Aspera -- Light OFF")
+            }
+        }
+    } catch (e: CameraAccessException) {
+        println("Could not access camera settings to toggle the flashlight/torch.")
+    }
+
+    catch (e: Exception) {
+        println("MAJOR -- Unknown error in Camera arg, action, or pipeline.")
+    }
+}
+
+//endregion LIGHT
 
 
 // WEATHER //
