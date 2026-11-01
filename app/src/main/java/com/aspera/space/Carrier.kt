@@ -99,35 +99,7 @@ suspend fun Key(vessel: Ships) {
 
 // Response
 
-fun Inter(vessel: Ships) {
 
-    if (vessel.responseType == "Alert") {
-        println(" Sound.Alerty ")
-    }
-
-    else if (vessel.responseType == "Personality") {
-        println("personality engine")
-    }
-
-    else if (vessel.responseType == "Chirp") {
-        println("Sound.chirpy")
-    }
-
-    else if (vessel.responseType == "Chime") {
-        println("Sound.chimy")
-    }
-
-    else if (vessel.responseType == "Blip0") {
-        println("Sound.Blippy0")
-    }
-
-    else if (vessel.responseType == "Blip1") {
-        println("Sound.Blippy1")
-    }
-
-    else if (vessel.responseType == "Blood") {
-        println("Sound.Bloody")
-    }
 
     else {
         println("sound.Errory")

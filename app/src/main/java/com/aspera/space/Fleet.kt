@@ -30,7 +30,8 @@ data class Ships(
     val Exec: () -> Unit,
     val authLevel: String = "MAX",
     val requiresArg: Boolean = false,
-    val responseType: String = "Chime"
+    val responseType: String = "Chime",
+    val responseMSG: String = ""
 )
 
 // Here's the Library
@@ -93,6 +94,7 @@ val Fleet = mapOf(
             Toast.makeText(AppContext.get, AppContext.get.getCurrentPlayingTrack(), Toast.LENGTH_SHORT).show()
 
         },
+        responseMSG = AppContext.get.getCurrentPlayingTrack()
         authLevel = "NONE",
         responseType = "Personality"
 //hopefully shouldnt need that just defaults
