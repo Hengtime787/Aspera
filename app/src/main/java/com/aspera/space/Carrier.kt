@@ -99,16 +99,6 @@ suspend fun Key(vessel: Ships) {
 
 // Response
 
-
-
-    else {
-        println("sound.Errory")
-        println("ERROR 3")
-        println("RESPONSE TYPE NOT FOUND/DEFINED")
-    }
-
-}
-
 fun Flux() {
     //personality response sender
     

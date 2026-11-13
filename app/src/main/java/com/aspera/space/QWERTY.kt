@@ -1,13 +1,19 @@
 package com.aspera.space
 
+import android.media.SoundPool
+
 // personality / response random picker file
 //coding on my phone btw...
 //region IPI
 //may have to remove bits of redundant in carrier file. IN CARRIER TO RESPONTYPE = RESPONSE TYPE DOR PARSMTERS
+val Dean = Jacob(AppContext.get)
 fun Inter(vessel: Ships) {
 //oops dorgot this was a thing. make a property or attriubute in raxh ship/vessel with the response message
+
+    try {
+
     if (vessel.responseType == "Alert") {
-        println(" Sound.Alerty ")
+        println("Sound.Alerty ")
     }
 
     else if (vessel.responseType == "Personality") {
@@ -15,7 +21,8 @@ fun Inter(vessel: Ships) {
     }
 
     else if (vessel.responseType == "Chirp") {
-        println("Sound.chirpy")
+        Dean.Dive("Chirp")
+        println("I did it!")
     }
 
     else if (vessel.responseType == "Chime") {
@@ -35,18 +42,15 @@ fun Inter(vessel: Ships) {
     }
     
     else {
-        throw QueryException ("Response not found/delivered properly.")
+        throw Exception ("Response not found/delivered properly.")
     }
       
-    } catch (e: SecurityException) {
-      println("It seems permissions are in order. idk what yet.")
-      startActivity(Intent(Settings.something.pleasesendhelp)
-    } catch (e: QueryException) {
-        println("ResponseType wasn't recognised, so QueryException was thrown.")
-    }
-    
-    
-  }
+    } catch (e: Exception) {
+        println("ResponseType wasn't recognised, so an exception *QueryException was thrown.")
+
+	}
+
+}
   
 //endregion IPI
 

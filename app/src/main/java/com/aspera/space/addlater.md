@@ -2,6 +2,9 @@
 
 = please makethe wifi bleutooth battyer saver indirect non controllable ones have a distinct sound that means it requires user input.
 
+__ Train Fasttext much more comprenhensively, with model size around 1.5M.
+__ Train CRFSUITE much more comprehensively, with reasonable model size.
+
 -- ARGS --
 
 

@@ -41,6 +41,8 @@ class MainActivity : FragmentActivity() {
 
         Adrenaline.setup(this)
 
+        Mask.setup(applicationContext, "asperav6.model")
+
         enableEdgeToEdge()
 
         setContent {

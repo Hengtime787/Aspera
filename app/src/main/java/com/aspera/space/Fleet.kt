@@ -94,7 +94,7 @@ val Fleet = mapOf(
             Toast.makeText(AppContext.get, AppContext.get.getCurrentPlayingTrack(), Toast.LENGTH_SHORT).show()
 
         },
-        responseMSG = AppContext.get.getCurrentPlayingTrack()
+        responseMSG = AppContext.get.getCurrentPlayingTrack(),
         authLevel = "NONE",
         responseType = "Personality"
 //hopefully shouldnt need that just defaults

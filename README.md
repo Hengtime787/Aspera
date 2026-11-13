@@ -85,4 +85,8 @@ Thank you to all open source libraries listed below! I am not affiliated with an
 
 -- Fasttext (https://github.com/facebookresearch/fastText/) == Used for text classification, (vital step in intent engine).
 
+-- Crfsuite (https://github.com/chokkan/crfsuite/) == Used for argument extraction/slot filling (required for functions that need specificity, like weather, or a world clock).
+
+
+
 ############## LICENSE FILES LOCATED IN root/LISCENSES folder ###############

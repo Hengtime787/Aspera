@@ -11,6 +11,8 @@ add_library(
         aspera_native
         SHARED
         Adrenaline.cpp
+        Mask.cpp
+        crf_stub.c
         fasttext/args.cc
         fasttext/densematrix.cc
         fasttext/dictionary.cc
@@ -22,12 +24,30 @@ add_library(
         fasttext/quantmatrix.cc
         fasttext/utils.cc
         fasttext/vector.cc
+        crfsuite/lib/cqdb/src/cqdb.c
+        crfsuite/lib/cqdb/src/lookup3.c
+        crfsuite/lib/crf/src/crfsuite.c
+        crfsuite/lib/crf/src/crf1d_context.c
+        crfsuite/lib/crf/src/crf1d_encode.c
+        crfsuite/lib/crf/src/crf1d_feature.c
+        crfsuite/lib/crf/src/crf1d_model.c
+        crfsuite/lib/crf/src/crf1d_tag.c
+        crfsuite/lib/crf/src/dataset.c
+        crfsuite/lib/crf/src/dictionary.c
+        crfsuite/lib/crf/src/holdout.c
+        crfsuite/lib/crf/src/logging.c
+        crfsuite/lib/crf/src/params.c
+        crfsuite/lib/crf/src/quark.c
+        crfsuite/lib/crf/src/rumavl.c
 )
 
 target_include_directories(
         aspera_native
         PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/fasttext
+        ${CMAKE_CURRENT_SOURCE_DIR}/crfsuite/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/crfsuite/lib/cqdb/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/crfsuite/lib/crf/src
 )
 
 find_library(
