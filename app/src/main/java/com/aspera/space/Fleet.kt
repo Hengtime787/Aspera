@@ -343,6 +343,38 @@ val Fleet = mapOf(
         responseType = "Blip1"
     ),
 
+    "WEATHER_" to Ships(
+        Exec = {
+            //sending to Mask
+            //just for now. later, make some consts to make faster and more changeable for requires Args Ships.
+            val Whalum = insaneintherainmusic.split("\\s+".toRegex())
+                // so here foir tyype mismatch i think mask should take string, and the split does a weird thing.
+            println(Whalum)
+            println(Whalum.joinToString(" "))
+            val resolution = Mask.processQuery(Whalum.joinToString(" "))
+            println(resolution)
+
+            //s Inside Out
+
+           val labelResplit = resolution.split("\\s+".toRegex())
+
+           val kMSO = Whalum.zip(labelResplit)
+               //thissly only work for location. paritally aid but NOT copy pasted.
+               .filter { (_, label) -> label.contains("LOCATION") }
+               .map { (word, _) -> word }
+               //s Back Again
+               .joinToString ("")
+
+            println("We got $kMSO here.")
+
+        },
+
+        authLevel = "NONE",
+        responseType = "Personality",
+        requiresArg = true
+
+    ),
+
     // Require Args //
 
     "OPEN_" to Ships(

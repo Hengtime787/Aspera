@@ -25,6 +25,10 @@ intent_engine.kt #/#* take in Resolve()
 //heavily modified adaptation lol
 // placeholders are marked by linkin park lyrics
 
+// THIS FOR GLOBAL VAR, ADDED ON 11/14/2026 TO USE FOR _requires arg Ships //
+
+var insaneintherainmusic = ""
+
 
 // GET LIBRARY ENTRY //
 
@@ -116,6 +120,8 @@ suspend fun Fly(request: String): String /* <------- ^^^ REMOVE IN FINAL THIS ON
    /* val request =
         "Placeholder for stt input"// do a .strip AND a .lower to that as well (for keyword only!)*/
     // hook = Resolve(request) //This is the real final intent
+
+    insaneintherainmusic = request
 
     val hook = Resolve(request)// also no need lowercase fastText is fire
 

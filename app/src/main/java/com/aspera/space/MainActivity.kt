@@ -25,6 +25,8 @@ import androidx.compose.runtime.setValue
 
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.aspera.space.ui.NavigationBarExample
 import com.aspera.space.ui.theme.AsperaTheme
 import kotlinx.coroutines.launch
 
@@ -32,74 +34,32 @@ class MainActivity : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        AppContext.get = applicationContext // fix later for service contesxt instead of mainactivity context.
+        AppContext.get = applicationContext
         AppContext.currentActivity = this
 
-        // ONBOARDING CHECK //
-
+        Mask.setup(applicationContext, "asperav6.model")
         ParkOnboarding.wasCompleted(this)
-
         Adrenaline.setup(this)
 
-        Mask.setup(applicationContext, "asperav6.model")
+       enableEdgeToEdge()
+       setContent {
+           AsperaTheme {
 
-        enableEdgeToEdge()
+               Home(/*inner padding default is 3*/)
 
-        setContent {
-            AsperaTheme {
-                Scaffold( modifier = Modifier.fillMaxSize() ) { innerPadding ->
-
-                    var MyState by remember { mutableStateOf("") }
-                    var Nashville by remember { mutableStateOf("") }
-                    val name = "Matthew"
-
-                    val scope = rememberCoroutineScope()
-
-                    Column(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(innerPadding),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-
-                    ) {
-                        ElevatedButton(onClick = {
-                            scope.launch {
-                                Nashville = Fly(MyState)
-                            }
-                        }) {
-                            Text(Nashville)
-                        }
-                        //WayLessSad()
-                        OutlinedTextField(
-                            value = MyState,
-                            onValueChange = {London -> MyState = London},
-                            label = {
-                                Text("$name@Aspera_Interface")
-                            }
-
-                        )
-
-                        //StateTwin()
-
-                        // calling it inline ish kinda equivalent now
-                    }
+               NavigationBarExample()
+           }
+       }
 
 
-
-                    /*
-                    Greeting(
-                        name = "Matthew",
-                        modifier = Modifier.padding(innerPadding)
-
-                    )
-
-                     */
-                }
-            }
-        }
     }
-}
+
+
+    }
+
+
+
+
 
 /*
 @Composable
@@ -139,13 +99,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    AsperaTheme {
-        Greeting("Matthew")
-    }
-}
 /*
 @Preview(showBackground = true)
 @Composable

@@ -54,7 +54,7 @@ object Mask {
 
         // Optional: Call Purge() if you want to free model memory immediately
         // Purge()
-
+        println(result) // stupid ai didn't think to do this.
         return result
     }
 }
