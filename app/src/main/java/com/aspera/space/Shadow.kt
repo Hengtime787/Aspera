@@ -111,6 +111,8 @@ inline fun Context.DeviceisUnlocked(): Boolean {
 //region MEDIA
 
 // inline function makes faster here? for exec="" calls in fleet
+
+/**Takes in media key events*/
 inline fun Context.CastleofGlass(crawling: Int) {
 
     val am = getSystemService(Context.AUDIO_SERVICE) as AudioManager
@@ -120,6 +122,7 @@ inline fun Context.CastleofGlass(crawling: Int) {
 
 }
 
+/**Gets song currently playing through media session manager Notification Listener*/
 inline fun Context.getCurrentPlayingTrack(): String {
     val manager = getSystemService(Context.MEDIA_SESSION_SERVICE) as MediaSessionManager
     return try {// PARTIALLY WRITTEN BY AI. ////////// THIWS IS FOR THE MOST PART THE ONLY AI PART //
@@ -154,11 +157,12 @@ inline fun Context.getCurrentPlayingTrack(): String {
 //endregion
 //region MUTE
 
+/**Mutes Audio using AudioManager*/
 inline fun Context.AudioMute() {
     val am = getSystemService(Context.AUDIO_SERVICE) as AudioManager
     am.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_MUTE, 0)
 }
-
+/**Unmutes Audio using AudioManager*/
 inline fun Context.AudioUnmute() {
     val am = getSystemService(Context.AUDIO_SERVICE) as AudioManager
     am.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_UNMUTE, 0)
@@ -171,10 +175,12 @@ inline fun Context.AudioUnmute() {
 val prettynow = DateTimeFormatter.ofPattern("HH:mm")
 val prettydate = DateTimeFormatter.ofPattern("EEEE, MMMM d")
 
+/**Returns current time in HH:mm format*/
 fun Context.TimeNow(): String {
     return LocalTime.now().format(prettynow)
 }
 
+/**REturns current date in EEEE, MMMM, d format.*/
 fun Context.DateNow(): String {
     return LocalDate.now().format(prettydate)
 }
@@ -184,6 +190,7 @@ fun Context.DateNow(): String {
 //region BLUETOOTH
 //pretty pround here as welll.
 
+/**Bluetooth Controller Function using BluetoothAdapter. Arguments: "enable", "disable".*/
 inline fun Context.bluetoothCTL(argument: String) {
     // could be optional
     try {
@@ -254,7 +261,7 @@ inline fun Context.bluetoothCTL(argument: String) {
 //endregion BLUETOOTH
 
 //region NETWORK
-
+/**Network Popup for System Panel. Arguments: "enable", "disable".*/
 inline fun Context.nmCLI(argument: String) {
     try {
         if (argument == "enable" || argument == "disable") {
@@ -277,7 +284,7 @@ inline fun Context.nmCLI(argument: String) {
 //endregion NETWORK
 
 //region DND
-
+/**Do Not Disturb mode, using NotificationManager.INTERRUPTION_FILTER_PRIORITY. Arguments: "enable", "disable".*/
 inline fun Context.shutupCTL(argument: String/*, timevalue: Int = 0*/) {
     //notification manager for dnd
 
@@ -326,6 +333,7 @@ inline fun Context.shutupCTL(argument: String/*, timevalue: Int = 0*/) {
 //the idea here is an arg and so it's either a percent, for the brightness level, (maybe ill have a string parester later?
 // and the it could also be a string like "ADAPT" or "UNADAPT", which will toggle adaptive brightness.
 
+/**Auto Brightness Controller (for now not custom vals) using Settings.System. Arguments: "enable", "disable".*/
 inline fun Context.brightnessCTL(argument: String) {
     try {
 
@@ -360,7 +368,7 @@ inline fun Context.brightnessCTL(argument: String) {
 //endregion BRIGHTNESS
 
 //region BATTERY
-
+/**Battery Service using BatteryManager (batman). Arguments: "GET_LEVEL", "SAVER_ON", "SAVER_OFF".*/
 inline fun Context.batteryCTL(argument: String): String {
 
     val batman = getSystemService(Context.BATTERY_SERVICE) as BatteryManager
@@ -402,6 +410,7 @@ inline fun Context.batteryCTL(argument: String): String {
 
 //region LIGHT
 
+/**Controls flashlight/torch using CameraManager System Service. Arguments: "enable", "disable".*/
 inline fun Context.flashlightCTL(argument: String) {
     try {
         val camMan = getSystemService(Context.CAMERA_SERVICE) as CameraManager
@@ -434,3 +443,9 @@ inline fun Context.flashlightCTL(argument: String) {
 
 
 // WEATHER //
+/**IN PROGRESS Weather API Connecter. Gets weather api. SYSARGUMENTS: weather_type, location, time.*/
+inline fun Context.Autumn(weather_type: String, location: String, time: String) {
+
+    println("I wonder what the $weather_type in $location will be at like $time today!")
+
+}

@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 
 
 @Composable
+/**User Interface page for Home*/
 fun Home(innerPadding: Dp = 3.dp) {
 
     var MyState by remember { mutableStateOf("") }

@@ -1,0 +1,300 @@
+__label__DATE_CURRENT what is today's date
+__label__MUTE suppress all audio output
+__label__BLUETOOTH_ON enable the bluetooth adapter
+__label__WEATHER_ will it rain in a week
+__label__BATTERY_LEVEL_STATUS_GET report the battery percentage
+__label__MUTE make it quiet
+
+__label__MEDIA_PAUSE stop the currently playing track
+__label__MUTE silence everything
+__label__MEDIA_PREVIOUS back up a song
+__label__NONE random discussion topic
+__label__MEDIA_PLAY continue the playlist
+__label__MEDIA_PLAY resume
+__label__MEDIA_PREVIOUS replay the prior song
+__label__FLASHLIGHT_ON light up the room
+__label__ADAPTIVE_BRIGHTNESS_OFF turn off automatic brightness
+__label__MUTE disable all sound playback
+
+__label__BATTERY_SAVER_ON enable power saving
+
+
+
+__label__FLASHLIGHT_ON turn on torch mode
+__label__BATTERY_SAVER_OFF deactivate battery conservation mode
+__label__MEDIA_PAUSE stop the tunes
+__label__DATE_CURRENT current date please
+__label__AIRPLANE_OFF stop flight mode
+__label__ADAPTIVE_BRIGHTNESS_ON adaptive screen on
+__label__MEDIA_NEXT load the next track
+__label__MEDIA_GET what track is active right now
+__label__BATTERY_SAVER_OFF exit low power mode
+__label__AIRPLANE_OFF switch off flight mode
+__label__WIFI_ON enable internet connection
+__label__WEATHER_ will it rain today
+__label__TIME_CURRENT what time is it currently
+__label__MOBILE_DATA_OFF stop mobile internet
+__label__MOBILE_DATA_OFF shut down cellular data
+__label__WIFI_OFF turn wireless networking off
+
+__label__MEDIA_PLAY resume current playback
+__label__MEDIA_PAUSE please pause music playback
+__label__BATTERY_SAVER_OFF switch off battery saver mode
+__label__MEDIA_PREVIOUS move to the previous track
+__label__WEATHER_ what is the humidity today
+
+__label__NONE tell me a story
+__label__FLASHLIGHT_ON turn the flashlight on
+__label__MEDIA_PREVIOUS return to the prior song
+__label__MEDIA_PLAY begin playing songs
+__label__BLUETOOTH_OFF disconnect bluetooth
+__label__ADAPTIVE_BRIGHTNESS_OFF manual brightness mode
+__label__NONE i am not issuing a device command
+__label__ADAPTIVE_BRIGHTNESS_ON turn on adaptive brightness
+__label__MEDIA_PAUSE pause the active playlist
+__label__FLASHLIGHT_OFF disable flashlight
+__label__WEATHER_ what is the temperature
+__label__NONE this sentence contains random words
+__label__MEDIA_NEXT proceed to the next song
+__label__MEDIA_NEXT skip this tune
+__label__BATTERY_LEVEL_STATUS_GET how much battery remains
+__label__WEATHER_ is it snowing in kalispell
+
+__label__NONE how are you today
+
+__label__NONE can you explain quantum mechanics
+
+__label__REBOOT restart the system now
+__label__MEDIA_PLAY start playing music now
+__label__MEDIA_NEXT advance the playlist
+__label__BATTERY_SAVER_ON activate battery conservation mode
+__label__NONE this is ordinary conversation
+__label__BLUETOOTH_ON power on bluetooth
+
+__label__MEDIA_GET provide information about the current song
+__label__MEDIA_PAUSE pause the current track
+__label__REBOOT perform a system restart
+__label__NONE i went to the store earlier
+__label__AIRPLANE_ON start flight mode
+__label__WEATHER_ what will be the high for today
+__label__DND_OFF disable do not disturb mode
+__label__MEDIA_NEXT move to the next song in the playlist
+
+__label__BATTERY_SAVER_ON enable low power operation
+__label__MEDIA_NEXT queue the next song
+__label__BATTERY_LEVEL_STATUS_GET how much battery is left
+__label__FLASHLIGHT_ON illuminate
+__label__NONE i watched a movie yesterday
+__label__UNMUTE enable sound again
+__label__BLUETOOTH_OFF disable wireless connection
+__label__MEDIA_GET identify this track
+__label__FLASHLIGHT_OFF switch off the flashlight
+__label__NONE how are biscuits consuming space
+__label__REBOOT reboot the computer
+__label__MEDIA_GET what media is currently playing
+__label__NONE bananas are yellow
+__label__REBOOT restart the operating system
+__label__MEDIA_GET what tune is on
+__label__DATE_CURRENT give me the current date
+__label__MEDIA_NEXT continue with the next track
+__label__MEDIA_PREVIOUS move playback back one track
+__label__DND_OFF take phone out of do not disturb mode
+__label__NONE i am talking about nothing important
+__label__NONE do sandwiches have freckles
+__label__WEATHER_ how hot is it right now
+__label__FLASHLIGHT_OFF turn off torch mode
+__label__MEDIA_PLAY play the active queue
+__label__MEDIA_GET name the current track
+
+__label__UNMUTE restore media audio
+__label__DND_OFF stop do not disturb
+__label__DND_OFF disable quiet hours
+__label__NONE how is the weather today
+__label__MOBILE_DATA_OFF turn off cellular data
+__label__AIRPLANE_OFF disable flight mode
+__label__FLASHLIGHT_OFF kill the torch
+__label__BLUETOOTH_OFF switch bluetooth off
+__label__REBOOT initiate a reboot
+__label__BLUETOOTH_OFF kill bluetooth
+__label__BATTERY_LEVEL_STATUS_GET display battery status
+__label__WIFI_ON power on the wifi adapter
+__label__NONE what is your name
+
+__label__MEDIA_PLAY start the audio
+__label__DND_ON enable quiet hours
+__label__MUTE mute
+__label__MOBILE_DATA_OFF disable mobile data
+
+__label__DATE_CURRENT tell me today's date
+__label__AIRPLANE_OFF disable airplane protocol
+__label__MEDIA_PAUSE suspend audio playback
+__label__MEDIA_PREVIOUS switch to the previous track
+__label__NONE would you like some coffee
+__label__UNMUTE bring system audio back
+__label__BATTERY_LEVEL_STATUS_GET show current battery charge
+__label__FLASHLIGHT_ON enable the torch
+__label__NONE the weather seems nice
+__label__MUTE silence the system audio
+__label__MEDIA_PREVIOUS reload the previous track
+__label__NONE there are clouds in the sky
+__label__DND_ON put phone in do not disturb mode
+__label__WIFI_OFF deactivate the wifi adapter
+__label__MEDIA_PAUSE stop music until further notice
+__label__MEDIA_PLAY continue the current song
+__label__ADAPTIVE_BRIGHTNESS_ON turn on automatic brightness
+__label__MEDIA_PREVIOUS jump back one song
+__label__MEDIA_GET what song is this
+__label__WEATHER_ how is the weather in Paris
+__label__WIFI_OFF disconnect wifi
+__label__ADAPTIVE_BRIGHTNESS_OFF disable auto display brightness
+__label__MEDIA_PLAY continue media playback
+__label__BLUETOOTH_OFF power off bluetooth
+
+__label__MEDIA_GET tell me what song is playing
+__label__BATTERY_SAVER_ON conserve battery power
+__label__BATTERY_LEVEL_STATUS_GET battery status please
+__label__DND_ON turn on do not disturb
+__label__MEDIA_PAUSE hold the music
+__label__NONE i need help with homework
+__label__TIME_CURRENT provide the time right now
+__label__BLUETOOTH_ON activate the bluetooth service
+__label__NONE my dog likes sleeping
+__label__MEDIA_PLAY restart music playback
+__label__BLUETOOTH_ON enable wireless audio
+__label__BLUETOOTH_OFF turn bluetooth off
+__label__MEDIA_PREVIOUS go back one track
+__label__WEATHER_ what is the weather in Missoula
+__label__BATTERY_SAVER_OFF restore normal power usage
+__label__WEATHER_ what is the forecast for London
+__label__REBOOT reboot
+__label__MEDIA_PLAY play the current playlist
+__label__FLASHLIGHT_ON switch on the flashlight
+__label__MEDIA_PAUSE suspend the current song
+__label__AIRPLANE_ON initiate flight mode
+__label__MOBILE_DATA_ON enable 5g or lte
+
+__label__ADAPTIVE_BRIGHTNESS_OFF disable auto brightness
+__label__ADAPTIVE_BRIGHTNESS_ON enable auto brightness
+__label__BATTERY_SAVER_OFF normal battery mode
+__label__NONE these words are not instructions
+__label__MEDIA_PAUSE interrupt media playback
+__label__TIME_CURRENT what is the hour
+__label__WEATHER_ give me the weather report
+__label__MEDIA_PAUSE quiet down for a second
+__label__BLUETOOTH_ON start bluetooth connectivity
+__label__TIME_CURRENT tell me the clock
+__label__WIFI_ON activate the wifi adapter
+__label__NONE this statement requires no action
+__label__MEDIA_NEXT move playback forward one song
+__label__SHUTDOWN power down the device safely
+__label__BLUETOOTH_OFF stop bluetooth services
+__label__WIFI_OFF stop wifi networking
+__label__UNMUTE resume sound output
+__label__ADAPTIVE_BRIGHTNESS_ON turn adaptive brightness on
+__label__MEDIA_GET show the current track information
+__label__BLUETOOTH_ON switch bluetooth on
+__label__REBOOT soft reset
+__label__MEDIA_PAUSE pause
+__label__BLUETOOTH_ON turn bluetooth on
+__label__WEATHER_ tell me the weather forecast for tomorrow
+__label__MOBILE_DATA_OFF turn off the mobile data transceiver
+
+__label__DND_OFF switch off do not disturb
+__label__SHUTDOWN power off the system
+__label__MEDIA_NEXT jump forward one track
+__label__DND_OFF allow notifications again
+__label__MUTE disable sound output
+__label__BATTERY_SAVER_ON reduce power consumption
+__label__MEDIA_PLAY please play music
+
+__label__MEDIA_GET identify the currently playing song
+__label__TIME_CURRENT display the current time
+__label__FLASHLIGHT_ON enable flashlight
+__label__UNMUTE turn the audio back on
+__label__MEDIA_PAUSE temporarily stop the music
+__label__SHUTDOWN turn off the device
+__label__BATTERY_SAVER_OFF stop conserving battery
+__label__DND_OFF unblock alerts
+__label__FLASHLIGHT_OFF turn off light
+__label__DATE_CURRENT provide today's date
+__label__WEATHER_ when will it stop raining
+
+
+__label__ADAPTIVE_BRIGHTNESS_OFF turn off adaptive brightness
+__label__SHUTDOWN shutdown system
+__label__UNMUTE allow sound playback again
+__label__MEDIA_NEXT play the following song
+__label__MEDIA_PLAY begin audio playback
+__label__BATTERY_SAVER_OFF disable power saving
+__label__WIFI_ON connect to wifi
+__label__FLASHLIGHT_ON shine the torch please
+__label__WEATHER_ will it be snowing two weeks from now
+__label__DND_ON block all calls and alerts
+__label__DND_ON switch on do not disturb
+__label__FLASHLIGHT_ON turn on light
+__label__DND_ON silence notifications
+
+__label__ADAPTIVE_BRIGHTNESS_OFF turn adaptive brightness off
+__label__MEDIA_NEXT next track please
+__label__WIFI_ON turn on wireless internet
+__label__MUTE turn sound completely off
+__label__AIRPLANE_ON put phone in airplane mode
+__label__MOBILE_DATA_ON enable mobile data
+__label__DND_OFF deactivate do not disturb
+__label__AIRPLANE_OFF turn off airplane mode
+__label__AIRPLANE_ON switch on flight mode
+__label__WIFI_OFF disable wireless networking
+__label__MOBILE_DATA_OFF deactivate the mobile data adapter
+
+__label__DND_OFF turn do not disturb off
+
+__label__FLASHLIGHT_OFF turn the flashlight off
+
+__label__MEDIA_PAUSE stop audio for now
+__label__SHUTDOWN shut down the computer please
+__label__DND_OFF turn off do not disturb mode
+__label__WEATHER_ how cold is it
+__label__BATTERY_SAVER_OFF disable battery saving mode
+__label__BATTERY_LEVEL_STATUS_GET tell me the remaining battery level
+__label__MOBILE_DATA_OFF stop mobile data networking
+__label__WIFI_ON start wireless
+__label__MOBILE_DATA_ON use mobile network
+__label__MEDIA_GET what is the current song title
+__label__UNMUTE unmute system audio
+__label__NONE what happened yesterday
+__label__DND_ON turn on do not disturb mode
+__label__BLUETOOTH_ON connect bluetooth
+__label__TIME_CURRENT what time is it
+__label__SHUTDOWN initiate computer shutdown
+__label__REBOOT restart the device
+__label__MUTE turn off all sounds
+__label__WIFI_ON turn wireless networking on
+
+__label__MEDIA_PLAY launch audio playback
+__label__MEDIA_GET whats currently playing
+__label__FLASHLIGHT_OFF torch off
+__label__NONE did you know that i like eating food
+__label__MEDIA_PREVIOUS return to the last track
+__label__FLASHLIGHT_ON torch on
+__label__MEDIA_NEXT jump to the next track
+__label__DATE_CURRENT what day is today
+__label__MEDIA_NEXT advance to the next audio item
+__label__MEDIA_PLAY start playing the selected album
+__label__WEATHER_ will it snow this weekend
+__label__MOBILE_DATA_ON start mobile data networking
+__label__MEDIA_PAUSE put playback on hold
+__label__AIRPLANE_OFF turn off airplane mode
+__label__MUTE mute all system audio
+__label__BATTERY_LEVEL_STATUS_GET whats my battery percentage
+__label__TIME_CURRENT current time please
+__label__WEATHER_ check the weather in New York
+__label__DATE_CURRENT what date is it today
+__label__AIRPLANE_ON cut all wireless signals
+__label__BATTERY_LEVEL_STATUS_GET check battery level
+__label__UNMUTE stop muting sounds
+__label__MUTE kill the audio
+__label__WIFI_ON start wifi networking
+__label__SHUTDOWN turn device off
+__label__UNMUTE unmute playback sounds
+__label__WIFI_OFF turn off wireless internet
+__label__MEDIA_PREVIOUS play the last song again

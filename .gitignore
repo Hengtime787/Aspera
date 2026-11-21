@@ -1,28 +1,30 @@
-.iml
-.gradle
-/local.properties
-.idea
-build.gradle.kts
-gradle.properties
-gradlew.bat
-gradlew
-settings.gradle.kts
-atlas-jars
+# Gradle & Build Caches
+.gradle/
+build/
+.cxx/
+.externalNativeBuild/
 
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Local configuration (SDK paths, local properties)
 local.properties
 
+# IDE & OS files
+.DS_Store
+.idea/workspace.xml
+.idea/shelf/
+.idea/caches/
+*.iml
+/captures/
+
 # Model training files and binaries in atlas-core
-**/model training/*.bin
-**/model training/*.ftz
-**/model training/*.vec
-**/model training/intents.txt
+# Model training files and binaries in atlas-core (including subfolders like 11-14-2026Models)
+atlas-core/model\ training/**/*.bin
+atlas-core/model\ training/**/*.ftz
+atlas-core/model\ training/**/*.vec
+atlas-core/model\ training/**/intents.txt
+
 
 # Model files packaged in app assets
-/app/src/main/assets/*.bin
-/app/src/main/assets/*.ftz
-/app/src/main/assets/*.vec
+app/src/main/assets/*.bin
+app/src/main/assets/*.ftz
+app/src/main/assets/*.vec
+

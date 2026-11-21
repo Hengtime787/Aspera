@@ -1,0 +1,1 @@
+so basically i used to use the qunaisize comand, and on no ermber 14m 2026, I've startredu sing hte autotune thing, with some help from good old google ai I as able to do it and make a 73K model that's not too shabby. The uatotune wokred for 5 mins.

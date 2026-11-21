@@ -365,7 +365,26 @@ val Fleet = mapOf(
                //s Back Again
                .joinToString ("")
 
-            println("We got $kMSO here.")
+// EYYY ! MIGHT BE MORE EFFICIENT TO DO IN ALL ONE ZIP IF POSSIBLE //
+            val time = Whalum.zip(labelResplit)
+                //thissly only work for location. paritally aid but NOT copy pasted.
+                .filter { (_, label) -> label.contains("TIME") }
+                .map { (word, _) -> word }
+                //s Back Again
+                .joinToString ("")
+
+// Olivia Dean reference: You already know the Time and the Place so don't be shy...
+            val weather_type = Whalum.zip(labelResplit)
+                //thissly only work for location. paritally aid but NOT copy pasted.
+                .filter { (_, label) -> label.contains("WEATHER") }
+                .map { (word, _) -> word }
+                //s Back Again
+                .joinToString ("")
+
+            println("We got $weather_type in $kMSO at $time")
+                //maybe will use open-metero?
+            // runs the Shadow Function Autumn (weather get).
+            AppContext.get.Autumn(weather_type, kMSO, time)
 
         },
 

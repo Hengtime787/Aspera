@@ -1,0 +1,3 @@
+app/src/main/cpp/crfsuite/* linguist-vendored
+app/src/main/cpp/fasttext/* linguist-vendored
+app/src/main/cpp/crf_stub.c linguist-vendored

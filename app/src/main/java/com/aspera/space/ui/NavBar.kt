@@ -22,6 +22,7 @@ import androidx.compose.material.icons.filled.MenuBook
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.Description
+import com.aspera.space.Docs
 import com.aspera.space.Home
 import com.aspera.space.Settings
 
@@ -72,8 +73,8 @@ fun NavigationBarExample(modifier: Modifier = Modifier) {
         ) {
             when (destinations[selectedIndex]) {
                 Destination.HOME -> Home()
-                Destination.SETTINGS -> Text("Albums Screen")
-                Destination.DOCS -> Text("Playlists Screen")
+                Destination.SETTINGS -> Settings()
+                Destination.DOCS -> Docs()
             }
         }
     }

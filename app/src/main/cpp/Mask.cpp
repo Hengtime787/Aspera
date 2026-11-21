@@ -89,19 +89,13 @@ Java_com_aspera_space_Mask_Resolve(
 
         CRFSuite::ItemSequence xseq;
         std::istringstream stream(text);
-        std::string line;
-        while (std::getline(stream, line)) {
-            if (line.empty()) continue;
+        std::string token;
+        while (stream >> token) {
+            if (token.empty()) continue;
             CRFSuite::Item item;
-            std::istringstream lineStream(line);
-            std::string attr;
-            while (lineStream >> attr) {
-                CRFSuite::Attribute attribute(attr, 1.0);
-                item.push_back(attribute);
-            }
-            if (!item.empty()) {
-                xseq.push_back(item);
-            }
+            CRFSuite::Attribute attribute(token, 1.0);
+            item.push_back(attribute);
+            xseq.push_back(item);
         }
 
         if (xseq.empty()) {
