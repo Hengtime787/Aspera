@@ -37,6 +37,54 @@ fun Docs(innerPadding: Dp = 3.dp) {
         horizontalAlignment = Alignment.CenterHorizontally
 
     ) {
+    
+    Card(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(innerPadding),
+        verticalArrangement =
+            Arrangement.Center,
+        horizontalAlignment = Alignments
+            .CenterHorizonally
+    ) {
+        Text(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
+            verticalArrangement =
+                Arrangement.Center,
+            horizontalAlignment =
+                Alignments
+                .CenterHorizontally
+        ) {
+            text = "Thanks for choosing Aspera!"
+        }
+        
+        Spacer(
+            modifier = Modifier
+            .fillMaxSize()
+            .padding(innerPadding),
+            verticalArrangement =
+            .Arrangement.Center,
+            horizonalAlignment =
+            Alignments
+            .CenterHorizontally
+        ) {}
+        
+                Text(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding),
+            verticalArrangement =
+                Arrangement.Center,
+            horizontalAlignment =
+                Alignments
+                .CenterHorizontally
+        ) {
+            text = ""
+        }
+        
+    }
 
 
         //StateTwin()
