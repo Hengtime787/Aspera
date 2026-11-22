@@ -57,7 +57,7 @@ fun Docs(innerPadding: Dp = 3.dp) {
                 Alignments
                 .CenterHorizontally
         ) {
-            text = "Thanks for choosing Aspera!"
+            text = "Thanks for using Aspera!"
         }
         
         Spacer(
@@ -83,6 +83,10 @@ fun Docs(innerPadding: Dp = 3.dp) {
         ) {
             text = ""
         }
+        
+    ElevatedButton(onClick = Licenses() }) {
+        Text("Open Source Licenses")
+    }
         
     }
 
