@@ -2,8 +2,11 @@ package com.aspera.space
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Card
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -18,86 +21,61 @@ import kotlinx.coroutines.launch
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.aspera.space.ui.Numb
 
 
+/**User Interface page for Documentation*/
 @Composable
-        /**User Interface page for Documentation*/
-fun Docs(innerPadding: Dp = 3.dp) {
+fun Docs(innerPadding: Dp = 16.dp) {
 
-    var MyState by remember { mutableStateOf("") }
-    var Nashville by remember { mutableStateOf("") }
-    val name = "Matthew"
-    val scope = rememberCoroutineScope()
+    var licenseOn by remember { mutableStateOf(false) }
 
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(innerPadding),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+    if (licenseOn) {
+        License(innerPadding = innerPadding)
+    } else {
 
-    ) {
-    
-    Card(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(innerPadding),
-        verticalArrangement =
-            Arrangement.Center,
-        horizontalAlignment = Alignments
-            .CenterHorizonally
-    ) {
-        Text(
+        Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(innerPadding),
-            verticalArrangement =
-                Arrangement.Center,
-            horizontalAlignment =
-                Alignments
-                .CenterHorizontally
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+
         ) {
-            text = "Thanks for using Aspera!"
-        }
-        
-        Spacer(
-            modifier = Modifier
-            .fillMaxSize()
-            .padding(innerPadding),
-            verticalArrangement =
-            .Arrangement.Center,
-            horizonalAlignment =
-            Alignments
-            .CenterHorizontally
-        ) {}
-        
+
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(innerPadding),
+            ) {
                 Text(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding),
-            verticalArrangement =
-                Arrangement.Center,
-            horizontalAlignment =
-                Alignments
-                .CenterHorizontally
-        ) {
-            text = ""
-        }
-        
-    ElevatedButton(onClick = Licenses() }) {
-        Text("Open Source Licenses")
-    }
-        
-    }
+                    text = "Thanks for using Aspera!"
+                )
+
+                Spacer(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(innerPadding),
+                )
+
+                ElevatedButton(onClick = {
+                    licenseOn = true
+
+                }
+                ) {
+
+                    Text("Open Source Licenses")
+
+                }
 
 
-        //StateTwin()
+                //StateTwin()
 
-        // calling it inline ish kinda equivalent now
-    }
+                // calling it inline ish kinda equivalent now
+            }
 
 
-    /*
+            /*
     Greeting(
         name = "Matthew",
         modifier = Modifier.padding(innerPadding)
@@ -105,7 +83,8 @@ fun Docs(innerPadding: Dp = 3.dp) {
     )
 
      */
+        }
+    }
 }
-
 
 

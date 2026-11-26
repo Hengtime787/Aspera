@@ -88,7 +88,7 @@ fun Settings(innerPadding: Dp = 16.dp) {
                     modifier = Modifier.weight(1f)
                 ) {
                     Text(
-                        text = "test switch 💖",
+                        text = "test switch",
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )

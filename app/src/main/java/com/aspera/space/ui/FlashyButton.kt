@@ -4,6 +4,7 @@ package com.aspera.space.ui
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import com.aspera.space.License
 
 import com.aspera.space.StartTextToSpeech
 
@@ -16,3 +17,9 @@ fun InTheEnd(onClick: () -> Unit) {
     }
 }
 
+@Composable
+fun Numb(friction: () -> Unit) {
+    ElevatedButton(onClick = {friction}) {
+        Text("Open Source Licenses")
+    }
+}
